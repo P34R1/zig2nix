@@ -175,7 +175,7 @@ pub fn initFromReader(allocator: std.mem.Allocator, reader: anytype) Error!@This
 pub fn initFromPath(allocator: std.mem.Allocator, path: []const u8) FileError!@This() {
     const f = try std.fs.openFileAbsolute(path, .{ .mode = .read_only });
     defer f.close();
-    return initFromReader(allocator, f.reader());
+    return initFromReader(allocator, f.deprecatedReader());
 }
 
 /// Reads from the standard path "/etc/os-release"

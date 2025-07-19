@@ -37,7 +37,7 @@
       # always compiled with zig-latest, does not have zig in the path
       # can be used for zon2json, zon2nix and target queries
       zig2nix-zigless = _callPackage ./src/zig2nix/default.nix {
-        zig = zigv.latest;
+        zig = zigv.master;
         zigBuildFlags = [ "-Dcpu=baseline" ];
       };
 
